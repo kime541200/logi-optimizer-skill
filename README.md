@@ -1,41 +1,45 @@
 # Logi Optimizer Skill
 
-這是一個 Agent 專用的 Skill，旨在協助 macOS 用戶移除臃腫的 Logitech 官方軟體（G HUB, Logi Options+），並安裝輕量化的替代方案。
+This is an Agent-dedicated Skill designed to help macOS users remove bloated Logitech official software (G HUB, Logi Options+) and install a lightweight alternative.
 
-## 功能
+## Features
 
-- **Clean Purge**: 徹底移除 Logitech 官方軟體及其殘留檔案（支援 G HUB 與 Options+）。
-- **Mini Install**: 安裝社群維護的輕量版 Logi Options+ Mini，支援自訂功能模組（如 Flow, DFU 等）。
-- **Safe Mode**: 所有破壞性操作（刪除、安裝）預設皆提供 `Dry Run`（模擬執行）與確認步驟。
+- **Clean Purge**: Thoroughly remove Logitech official software and its residual files (supports G HUB and Options+).
+- **Mini Install**: Install the community-maintained lightweight Logi Options+ Mini with support for custom feature modules (such as Flow, DFU, etc.).
+- **Safe Mode**: All destructive operations (deletion, installation) provide `Dry Run` and confirmation steps by default.
 
-## 安裝
+## Installation
 
-你可以透過以下方式安裝此 Skill：
+You can install this Skill in the following ways:
 
-### 使用 npx
+### Using npx
 ```bash
 npx skill add kime541200/logi-optimizer-skill
 ```
 
-### 手動安裝
-將此倉庫 Clone 到你的 Skill 目錄中：
+### Manual Installation
+Clone this repository to your Skill directory:
 ```bash
-cd ~/.gemini/skills  # 或你的 skill 存放路徑
+cd ~/.gemini/skills  # or your skill storage path
 git clone https://github.com/kime541200/logi-optimizer-skill.git
 ```
 
-## 使用方法
+## Usage
 
-在 Agent 對話中，你可以直接使用自然語言請求：
+In Agent conversations, you can directly use natural language requests:
 
-- 「幫我清理 Logitech 的舊軟體」
-- 「安裝 Logi Options+ Mini」
+- "Help me clean up old Logitech software"
+- "Install Logi Options+ Mini"
 
-## 系統需求
+## System Requirements
 
 - macOS
-- 需具備 `sudo` 權限（用於清理殘留檔案與安裝）
+- Requires `sudo` privileges (for cleaning residual files and installation)
 
-## 致謝
+## Acknowledgments
 
-本 Skill 封裝了 [Qetesh/logi-options-plus-mini](https://github.com/Qetesh/logi-options-plus-mini) 的功能。
+This Skill encapsulates the functionality of [Qetesh/logi-options-plus-mini](https://github.com/Qetesh/logi-options-plus-mini).
+
+---
+
+**Language:** English | [繁體中文](README_zh.md)

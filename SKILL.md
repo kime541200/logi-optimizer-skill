@@ -1,41 +1,41 @@
 ---
 name: logi-optimizer
-description: 協助用戶移除臃腫的 Logitech 官方應用程式（G HUB, Logi Options+），並清理殘留檔案，隨後安裝輕量化的 Logi Options+ Mini 工具。適用於用戶抱怨 Logitech 軟體佔用資源或想要更乾淨的系統時。
+description: Helps users remove bloated Logitech official applications (G HUB, Logi Options+), clean up residual files, and then install the lightweight Logi Options+ Mini tool. Suitable when users complain about Logitech software consuming resources or want a cleaner system.
 ---
 
 # Logitech Optimization Skill
 
-本 Skill 旨在協助用戶安全地移除官方 Logitech 軟體並遷移至輕量化替代方案。
+This Skill is designed to help users safely remove official Logitech software and migrate to a lightweight alternative.
 
-## 步驟 1：清理官方軟體 (Purge)
+## Step 1: Clean Up Official Software (Purge)
 
-在執行任何刪除操作前，務必先進行模擬執行（Dry Run）並獲得用戶同意。
+Before executing any deletion operations, always perform a dry run first and obtain user consent.
 
-1.  **模擬執行**：
-    執行清理腳本並顯示將要刪除的項目：
+1.  **Dry Run**:
+    Execute the cleanup script and display items to be deleted:
     ```bash
     ./scripts/official-logi-pruge.sh --dry-run
     ```
 
-2.  **確認與執行**：
-    向用戶展示上述輸出，並詢問：「是否同意執行以上清理操作？（這將移除所有 Logitech 官方驅動與軟體）」
-    若用戶同意，則執行：
+2.  **Confirm and Execute**:
+    Display the above output to the user and ask: "Do you agree to execute the above cleanup operation? (This will remove all Logitech official drivers and software)"
+    If the user agrees, execute:
     ```bash
     ./scripts/official-logi-pruge.sh
     ```
-    *注意：此過程可能會要求用戶輸入密碼（sudo）。*
+    *Note: This process may require the user to enter a password (sudo).*
 
-## 步驟 2：安裝 Logi Options+ Mini (Install)
+## Step 2: Install Logi Options+ Mini (Install)
 
-清理完成後，協助安裝社群維護的輕量版工具。
+After cleanup is complete, assist with installing the community-maintained lightweight version tool.
 
-1. **模擬/確認安裝配置**：
+1. **Simulate/Confirm Installation Configuration**:
 
-    預設為「最輕量安裝」（不含額外功能）。若用戶需要特定功能（如 Flow, DFU, 背光控制），可透過 `--features` 參數指定代碼（例如 `2 5 6`）。
+    The default is "lightest installation" (without additional features). If users need specific features (such as Flow, DFU, backlight control), they can specify codes via the `--features` parameter (for example `2 5 6`).
 
     
 
-    執行模擬以確認安裝路徑與來源：
+    Execute simulation to confirm installation path and source:
 
     ```bash
 
@@ -45,38 +45,38 @@ description: 協助用戶移除臃腫的 Logitech 官方應用程式（G HUB, Lo
 
 
 
-2. **執行安裝**：
-    告知用戶當前的功能選擇，詢問是否繼續安裝。若同意：
+2. **Execute Installation**:
+    Inform the user of the current feature selection and ask if they want to proceed with installation. If agreed:
     ```bash
     ./scripts/install_logi_plus_mini.sh
     ```
 
-### 功能代碼參考表
+### Feature Code Reference Table
 
-當用戶詢問各個選項的意義時，請參考下表：
+When users ask about the meaning of each option, refer to the table below:
 
-| 代碼 | 名稱 | 說明 | 建議 |
+| Code | Name | Description | Recommendation |
 | :--- | :--- | :--- | :--- |
-| **1** | analytics | 傳送使用數據與診斷資料給羅技。 | 建議關閉 |
-| **2** | flow | 跨電腦控制與檔案傳輸（Logi Flow）。 | 視需求開啟 |
-| **3** | sso | 帳號登入功能（雲端備份設定）。 | 建議關閉 |
-| **4** | update | 軟體自動更新。 | **強烈建議關閉**（避免更新後臃腫元件回歸） |
-| **5** | dfu | 設備韌體更新。 | **建議開啟** |
-| **6** | backlight | 鍵盤背光調整與自定義。 | 視需求開啟（MX Keys 等） |
-| **7** | logivoice | 羅技語音聽寫與翻譯功能。 | 建議關閉 |
-| **8** | aiprompt | AI Prompt Builder (ChatGPT 捷徑)。 | 建議關閉 |
-| **9** | recommend | 設備推薦廣告。 | 建議關閉 |
-| **10** | smartactions | 智慧動作 (巨集/自動化流程)。 | 視需求開啟 |
-| **11** | ring | Actions Ring 螢幕圓形選單。 | 建議關閉 |
-| **12** | all | 安裝以上所有功能。 | 不建議 |
+| **1** | analytics | Send usage data and diagnostics to Logitech. | Recommend disabling |
+| **2** | flow | Cross-computer control and file transfer (Logi Flow). | Enable as needed |
+| **3** | sso | Account login functionality (cloud backup of settings). | Recommend disabling |
+| **4** | update | Automatic software updates. | **Strongly recommend disabling** (avoid bloated components returning after updates) |
+| **5** | dfu | Device firmware updates. | **Recommend enabling** |
+| **6** | backlight | Keyboard backlight adjustment and customization. | Enable as needed (MX Keys, etc.) |
+| **7** | logivoice | Logitech voice dictation and translation features. | Recommend disabling |
+| **8** | aiprompt | AI Prompt Builder (ChatGPT shortcut). | Recommend disabling |
+| **9** | recommend | Device recommendation advertisements. | Recommend disabling |
+| **10** | smartactions | Smart actions (macros/automation workflows). | Enable as needed |
+| **11** | ring | Actions Ring screen circular menu. | Recommend disabling |
+| **12** | all | Install all features above. | Not recommended |
 
-**常見建議組合：**
-- **標準實用 (2 5 6)**：Flow + 韌體更新 + 背光控制。
-- **極簡穩定 (5)**：僅保留韌體更新，其餘皆無。
-- **絕對輕量 (Enter)**：不選任何代碼，僅安裝驅動核心。
+**Common Recommended Combinations:**
+- **Standard Practical (2 5 6)**: Flow + Firmware Updates + Backlight Control.
+- **Ultra Minimal Stable (5)**: Firmware updates only, everything else disabled.
+- **Absolute Lightweight (Enter)**: No codes selected, driver core only.
 
-## 故障排除
+## Troubleshooting
 
-- **權限錯誤**：確保腳本具有執行權限 (`chmod +x scripts/*.sh`)。
-- **Sudo 超時**：腳本內建 `sudo -v` 預熱，若執行時間過長可能需要再次輸入密碼。
-- **安裝失敗**：如果 `install_logi_plus_mini.sh` 在自動輸入階段失敗（因為上游變更了問答順序），建議改為手動引導用戶執行該工具。
+- **Permission Error**: Ensure scripts have execute permission (`chmod +x scripts/*.sh`).
+- **Sudo Timeout**: Scripts have built-in `sudo -v` warmup. If execution takes too long, you may need to enter the password again.
+- **Installation Failure**: If `install_logi_plus_mini.sh` fails during the automated input phase (due to upstream changes in Q&A order), consider manually guiding users to run the tool instead.
